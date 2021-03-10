@@ -1,0 +1,8 @@
+{    "build": {
+    "type": "maven",
+    "goal": "build"
+  },
+    "deploy": {
+        "jarName" : "build/libs/projetAgile.jar"
+    }
+  }
