@@ -1,5 +1,8 @@
 {    "build": {
     "type": "maven",
     "goal": "package"
-  }
+  },
+    "deploy": {
+        "jarName" : "target/ubo-1.0-SNAPSHOT.jar"
+    }
   }
