@@ -3,6 +3,6 @@
     "goal": "package"
   },
     "deploy": {
-        "jarName" : "target/ubo-1.0-SNAPSHOT.jar"
+        "jarName" : "target/ubo-0.0.1-SNAPSHOT.jar"
     }
   }
