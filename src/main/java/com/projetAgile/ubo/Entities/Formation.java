@@ -6,6 +6,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 
 @Entity
@@ -30,6 +31,7 @@ public class Formation implements Serializable {
     @Column(name = "FIN_ACCREDITATION")
     private Date finAccreditation;
 
+
     @Column(name = "N0_ANNEE")
     private BigDecimal n0Annee;
 
@@ -39,5 +41,11 @@ public class Formation implements Serializable {
     public Formation() {
     }
 
+    public String getCodeFormation() {
+        return codeFormation;
+    }
 
+    public void setCodeFormation(String codeFormation) {
+        this.codeFormation = codeFormation;
+    }
 }

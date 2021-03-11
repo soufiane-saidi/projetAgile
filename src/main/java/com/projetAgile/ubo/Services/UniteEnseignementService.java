@@ -15,19 +15,16 @@ public class UniteEnseignementService {
     private FormationRepository formationRepository;
 
     @Autowired
-    public UniteEnseignementService(UniteEnseignementRepository uniteEnseignementRepository, FormationRepository formationRepository) {
+    public UniteEnseignementService(UniteEnseignementRepository uniteEnseignementRepository) {
         this.uniteEnseignementRepository = uniteEnseignementRepository;
-        this.formationRepository=formationRepository;
+
     }
 
     public List<UniteEnseignement> getAllUniteEnseignement(){
         return uniteEnseignementRepository.findAll();
     }
     
-    public List<UniteEnseignement> getUniteEnseignementsByCodeFormation(String codeFormation) {
-    	Formation formation= formationRepository.findFormationByCodeFormation(codeFormation);
-		return uniteEnseignementRepository.findByFormation(formation);
-	}
+
 
 
 }

@@ -30,10 +30,10 @@ public class UniteEnseignementController {
         return uniteEnseignementService.getAllUniteEnseignement();
     }
     
-    @GetMapping(value = "/UniteEnseignements/Formation/code={code}")
+    /*@GetMapping(value = "/UniteEnseignements/Formation/code={code}")
     public List<UniteEnseignement> getUniteEnseignementsByCodeFormation(@PathVariable String code){
         return uniteEnseignementService.getUniteEnseignementsByCodeFormation(code);
-    }
+    }*/
 
 
 }
