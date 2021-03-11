@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+@CrossOrigin(origins="http://localhost:4200", allowedHeaders="*")
 
 @RestController
 public class FormationController {
@@ -29,7 +30,7 @@ public class FormationController {
     }
 
     @PostMapping(path = "/formation")
-    public Formation addFormation(@RequestBody Formation formation){
+    public boolean addFormation(@RequestBody Formation formation){
         return formationService.addFormation(formation);
     }
 }

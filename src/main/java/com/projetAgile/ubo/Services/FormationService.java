@@ -24,8 +24,12 @@ public class FormationService {
         return formationRepository.findFormationByCodeFormation(code);
     }
 
-    public Formation addFormation(Formation formation){
-        return formationRepository.save(formation);
+    public boolean addFormation(Formation formation){
+    	if(formationRepository.findFormationByCodeFormation(formation.getCodeFormation())==null) {
+    		formationRepository.save(formation);
+        	return true;
+    	}
+    	else return false;
     }
 
 
