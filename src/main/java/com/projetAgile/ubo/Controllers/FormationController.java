@@ -29,7 +29,7 @@ public class FormationController {
     }
 
     @PostMapping(path = "/formation")
-    public Formation addFormation(@RequestBody Formation formation){
+    public boolean addFormation(@RequestBody Formation formation){
         return formationService.addFormation(formation);
     }
 }

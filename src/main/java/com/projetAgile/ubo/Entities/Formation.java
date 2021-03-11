@@ -39,5 +39,11 @@ public class Formation implements Serializable {
     public Formation() {
     }
 
+    public String getCodeFormation() {
+        return codeFormation;
+    }
 
+    public void setCodeFormation(String codeFormation) {
+        this.codeFormation = codeFormation;
+    }
 }
