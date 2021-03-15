@@ -23,7 +23,14 @@ public class UniteEnseignementService {
     public List<UniteEnseignement> getAllUniteEnseignement(){
         return uniteEnseignementRepository.findAll();
     }
-    
+
+
+
+    public List<UniteEnseignement> getUniteEnseignementsByCodeFormation(String codeFormation) {
+       // Formation formation= formationRepository.findFormationByCodeFormation(codeFormation);
+        return uniteEnseignementRepository.findByIdCodeFormation(codeFormation);
+    }
+
 
 
 

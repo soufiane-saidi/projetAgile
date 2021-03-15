@@ -36,4 +36,10 @@ public class UniteEnseignementController {
     }*/
 
 
+    @GetMapping(value = "/UniteEnseignements/Formation/code={code}")
+    public List<UniteEnseignement> getUniteEnseignementsByCodeFormation(@PathVariable String code){
+        return uniteEnseignementService.getUniteEnseignementsByCodeFormation(code);
+    }
+
+
 }

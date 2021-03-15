@@ -38,6 +38,10 @@ public class Formation implements Serializable {
     @Column(name = "NOM_FORMATION")
     private String nomFormation;
 
+    @OneToMany(mappedBy = "formation")
+    private List<UniteEnseignement> uniteEnseignements;
+
+
     public Formation() {
     }
 
@@ -48,4 +52,5 @@ public class Formation implements Serializable {
     public void setCodeFormation(String codeFormation) {
         this.codeFormation = codeFormation;
     }
+
 }

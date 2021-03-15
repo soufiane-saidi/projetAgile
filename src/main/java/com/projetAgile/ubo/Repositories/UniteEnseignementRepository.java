@@ -12,5 +12,9 @@ import java.util.List;
 public interface UniteEnseignementRepository extends JpaRepository<UniteEnseignement, UniteEnseignementPK> {
 
 	//public List<UniteEnseignement> findByFormation(Formation formation);
+
+    public List<UniteEnseignement> findByFormation(Formation formation);
+    public List<UniteEnseignement> findByIdCodeFormation(String codeFormation);
+
 	
 }

@@ -1,5 +1,8 @@
 package com.projetAgile.ubo.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -42,7 +45,19 @@ public class UniteEnseignement implements Serializable {
     @JoinColumn(name = "NO_ENSEIGNANT")
     private Enseignant enseignant;
 
+
+    //bi-directional many-to-one association to Formation
+
+    @ManyToOne
+    @JsonIgnore
+    @JoinColumn(name="CODE_FORMATION",insertable=false, updatable=false)
+    private Formation formation;
+
+
+
     public UniteEnseignement() {
     }
+
+
 
 }
