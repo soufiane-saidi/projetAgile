@@ -1,6 +1,5 @@
 package com.projetAgile.ubo.Repositories;
 
-import com.projetAgile.ubo.Entities.Enseignant;
 import com.projetAgile.ubo.Entities.Formation;
 import com.projetAgile.ubo.Entities.UniteEnseignement;
 import com.projetAgile.ubo.Entities.UniteEnseignementPK;
@@ -15,8 +14,7 @@ public interface UniteEnseignementRepository extends JpaRepository<UniteEnseigne
     //public List<UniteEnseignement> findByFormation(Formation formation);
 
     List<UniteEnseignement> findByFormation(Formation formation);
-
+    UniteEnseignement findByIdCodeUe(String codeUE);
     List<UniteEnseignement> findByIdCodeFormation(String codeFormation);
-
-     List<UniteEnseignement> findByEnseignantNoEnseignant(long noEnseignant);
+    List<UniteEnseignement> findByEnseignantNoEnseignant(long noEnseignant);
 }
