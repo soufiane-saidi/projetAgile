@@ -9,4 +9,6 @@ import java.util.List;
 
 @Repository
 public interface EnseignantRepository extends JpaRepository<Enseignant,Long> {
+
+    Enseignant findByNoEnseignant(long noEnseignant);
 }

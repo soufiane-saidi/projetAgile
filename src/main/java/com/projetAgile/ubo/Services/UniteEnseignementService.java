@@ -1,7 +1,9 @@
 package com.projetAgile.ubo.Services;
 
+import com.projetAgile.ubo.Entities.Enseignant;
 import com.projetAgile.ubo.Entities.Formation;
 import com.projetAgile.ubo.Entities.UniteEnseignement;
+import com.projetAgile.ubo.Repositories.EnseignantRepository;
 import com.projetAgile.ubo.Repositories.FormationRepository;
 import com.projetAgile.ubo.Repositories.UniteEnseignementRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +20,13 @@ public class UniteEnseignementService {
 
     private UniteEnseignementRepository uniteEnseignementRepository;
     private FormationRepository formationRepository;
+    private EnseignantRepository enseignantRepository;
 
     @Autowired
-    public UniteEnseignementService(UniteEnseignementRepository uniteEnseignementRepository) {
+    public UniteEnseignementService(UniteEnseignementRepository uniteEnseignementRepository, FormationRepository formationRepository, EnseignantRepository enseignantRepository) {
         this.uniteEnseignementRepository = uniteEnseignementRepository;
-
+        this.formationRepository = formationRepository;
+        this.enseignantRepository = enseignantRepository;
     }
 
     public List<UniteEnseignement> getAllUniteEnseignement(){
@@ -41,15 +45,26 @@ public class UniteEnseignementService {
     }
     public boolean updateUe(String codeUe,String designation,BigDecimal nbhCm, BigDecimal nbhTd, BigDecimal nbhTp){
         UniteEnseignement uniteEnseignement=getUniteEnseignementsByCodeUe(codeUe);
+        if(uniteEnseignement!=null){
+            uniteEnseignement.setDesignation(designation);
+            uniteEnseignement.setNbhCm(nbhCm);
+            uniteEnseignement.setNbhTd(nbhTd);
+            uniteEnseignement.setNbhTp(nbhTp);
+            uniteEnseignementRepository.save(uniteEnseignement);
+            return true;
+        }
+        return false;
+    }
 
-        uniteEnseignement.setDesignation(designation);
-        uniteEnseignement.setNbhCm(nbhCm);
-        uniteEnseignement.setNbhTd(nbhTd);
-        uniteEnseignement.setNbhTp(nbhTp);
-         if(uniteEnseignementRepository.save(uniteEnseignement)!=null){
-             return true;
-         }else{ return false;}
-
+    public boolean updateUeEns(String codeUe,long noEnseignant){
+        UniteEnseignement uniteEnseignement=getUniteEnseignementsByCodeUe(codeUe);
+        Enseignant enseignant = enseignantRepository.findByNoEnseignant(noEnseignant);
+        if(uniteEnseignement!=null && enseignant!= null){
+            uniteEnseignement.setEnseignant(enseignant);
+            uniteEnseignementRepository.save(uniteEnseignement);
+            return true;
+        }
+        return false;
     }
 
 

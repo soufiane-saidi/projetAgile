@@ -7,10 +7,7 @@ import com.projetAgile.ubo.Services.UniteEnseignementService;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -47,13 +44,16 @@ public class UniteEnseignementController {
         return uniteEnseignementService.getUniteEnseignementsByCodeUe(code);
     }
 
-    @GetMapping(value = "/UniteEnseignements/UE/code={code}/designation={designation}/nbhCm={nbhCm}/nbhTd={nbhTd}/nbhTp={nbhTp}")
+    @PutMapping(value = "/UniteEnseignements/UE/code={code}/designation={designation}/nbhCm={nbhCm}/nbhTd={nbhTd}/nbhTp={nbhTp}")
     public boolean updateUe(@PathVariable String code,@PathVariable String designation,
                             @PathVariable BigDecimal nbhCm,@PathVariable BigDecimal nbhTd,
                             @PathVariable BigDecimal nbhTp){
-       if(uniteEnseignementService.updateUe(code, designation, nbhCm,  nbhTd,  nbhTp)){
-           return true;
-       }else{ return false;}
+       return uniteEnseignementService.updateUe(code, designation, nbhCm,  nbhTd,  nbhTp);
 
+    }
+
+    @PutMapping(value = "/updateUEEnseignant/code={code}/ensCode={ensCode}")
+    public boolean updateEUEns(@PathVariable String code,@PathVariable long ensCode){
+        return uniteEnseignementService.updateUeEns(code,ensCode);
     }
 }
