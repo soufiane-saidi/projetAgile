@@ -22,6 +22,7 @@ public class Formation implements Serializable {
     @Column(name = "DEBUT_ACCREDITATION")
     private Date debutAccreditation;
 
+  
     private String diplome;
 
     @Column(name = "DOUBLE_DIPLOME")
