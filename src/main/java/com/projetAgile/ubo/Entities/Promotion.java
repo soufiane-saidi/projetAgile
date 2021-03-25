@@ -58,6 +58,11 @@ public class Promotion implements Serializable {
     @JoinColumn(name = "NO_ENSEIGNANT")
     @JsonIgnore
     private Enseignant enseignant;
+    
+    @ManyToOne
+    @JsonIgnore
+    @JoinColumn(name="CODE_FORMATION",insertable=false, updatable=false)
+    private Formation formation;
 
     public Promotion() {
     }

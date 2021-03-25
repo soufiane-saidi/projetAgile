@@ -20,13 +20,18 @@ public class FormationService {
     public List<Formation> getAllFormations(){
         return formationRepository.findAll();
     }
-    public Formation getFormation(String code){
-        return formationRepository.findFormationByCodeFormation(code);
+    public Formation getFormationById(String id){
+        return formationRepository.getOne(id);
     }
-
-    public boolean addFormation(Formation formation){
-        if( getFormation(formation.getCodeFormation())==null){
-             formationRepository.save(formation);
+    
+    public Formation addFormation(Formation formation){
+        return formationRepository.save(formation);
+    }
+    
+    public boolean deleteFormation(String code){
+    	Formation f = getFormationById(code);
+        if(f.getListPromotions().size()==0){
+             formationRepository.delete(f);
             return true;
         }else return false;
 

@@ -22,7 +22,6 @@ public class Formation implements Serializable {
     @Column(name = "DEBUT_ACCREDITATION")
     private Date debutAccreditation;
 
-  
     private String diplome;
 
     @Column(name = "DOUBLE_DIPLOME")
@@ -32,7 +31,6 @@ public class Formation implements Serializable {
     @Column(name = "FIN_ACCREDITATION")
     private Date finAccreditation;
 
-
     @Column(name = "N0_ANNEE")
     private BigDecimal n0Annee;
 
@@ -41,17 +39,125 @@ public class Formation implements Serializable {
 
     @OneToMany(mappedBy = "formation")
     private List<UniteEnseignement> uniteEnseignements;
+    
 
-
+    //bi-directional many-to-one association to promotion
+      @OneToMany(mappedBy = "formation")
+      private List<Promotion> promotions;
+    
     public Formation() {
     }
 
-    public String getCodeFormation() {
-        return codeFormation;
-    }
 
-    public void setCodeFormation(String codeFormation) {
-        this.codeFormation = codeFormation;
-    }
 
+	public String getCodeFormation() {
+		return codeFormation;
+	}
+
+
+
+	public void setCodeFormation(String codeFormation) {
+		this.codeFormation = codeFormation;
+	}
+
+
+
+	public Date getDebutAccreditation() {
+		return debutAccreditation;
+	}
+
+
+
+	public void setDebutAccreditation(Date debutAccreditation) {
+		this.debutAccreditation = debutAccreditation;
+	}
+
+
+
+	public String getDiplome() {
+		return diplome;
+	}
+
+
+
+	public void setDiplome(String diplome) {
+		this.diplome = diplome;
+	}
+
+
+
+	public String getDoubleDiplome() {
+		return doubleDiplome;
+	}
+
+
+
+	public void setDoubleDiplome(String doubleDiplome) {
+		this.doubleDiplome = doubleDiplome;
+	}
+
+
+
+	public Date getFinAccreditation() {
+		return finAccreditation;
+	}
+
+
+
+	public void setFinAccreditation(Date finAccreditation) {
+		this.finAccreditation = finAccreditation;
+	}
+
+
+
+	public BigDecimal getN0Annee() {
+		return n0Annee;
+	}
+
+
+
+	public void setN0Annee(BigDecimal n0Annee) {
+		this.n0Annee = n0Annee;
+	}
+
+
+
+	public String getNomFormation() {
+		return nomFormation;
+	}
+
+
+
+	public void setNomFormation(String nomFormation) {
+		this.nomFormation = nomFormation;
+	}
+
+
+
+	public List<UniteEnseignement> getUniteEnseignements() {
+		return uniteEnseignements;
+	}
+
+
+
+	public void setUniteEnseignements(List<UniteEnseignement> uniteEnseignements) {
+		this.uniteEnseignements = uniteEnseignements;
+	}
+	
+	public List<Promotion> getListPromotions() {
+	        return promotions;
+	    }
+	
+	public void setPromotions(List<Promotion> promotions) {
+		this.promotions = promotions;
+	}
+
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
+    
 }
