@@ -1,4 +1,4 @@
-package com.projetAgile.ubo;
+/*package com.projetAgile.ubo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,4 +10,4 @@ class UboApplicationTests {
 	void contextLoads() {
 	}
 
-}
+}*/

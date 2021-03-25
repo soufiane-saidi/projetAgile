@@ -3,14 +3,10 @@ package com.projetAgile.ubo.Controllers;
 import com.projetAgile.ubo.Entities.Formation;
 import com.projetAgile.ubo.Services.FormationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+@CrossOrigin(origins="http://localhost:4200", allowedHeaders="*")
 
 @RestController
 public class FormationController {
@@ -28,19 +24,18 @@ public class FormationController {
         return formationService.getAllFormations();
     }
 
-    @GetMapping(value = "/formation/{id}")
-    public Formation findFormationById(@PathVariable String id){
-        return formationService.getFormationById(id);
+    @GetMapping(value = "/Formations/code={code}")
+    public Formation findByCode(@PathVariable String code){
+        return formationService.getFormation(code);
     }
-    
+
     @PostMapping(path = "/formation")
-    public Formation addFormation(@RequestBody Formation formation){
+    public boolean addFormation(@RequestBody Formation formation){
         return formationService.addFormation(formation);
     }
     
-    @DeleteMapping(value = "/Formations/code={code}")
-    public boolean findByCode(@PathVariable String code){
+    @DeleteMapping(value = "/Formations/delete/code={code}")
+    public boolean deletefindByCode(@PathVariable String code){
         return formationService.deleteFormation(code);
     }
-
 }

@@ -64,5 +64,135 @@ public class Enseignant implements Serializable {
     public Enseignant() {
     }
 
+	public long getNoEnseignant() {
+		return noEnseignant;
+	}
+
+	public void setNoEnseignant(long noEnseignant) {
+		this.noEnseignant = noEnseignant;
+	}
+
+	public String getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
+
+	public String getCodePostal() {
+		return codePostal;
+	}
+
+	public void setCodePostal(String codePostal) {
+		this.codePostal = codePostal;
+	}
+
+	public String getEmailPerso() {
+		return emailPerso;
+	}
+
+	public void setEmailPerso(String emailPerso) {
+		this.emailPerso = emailPerso;
+	}
+
+	public String getEmailUbo() {
+		return emailUbo;
+	}
+
+	public void setEmailUbo(String emailUbo) {
+		this.emailUbo = emailUbo;
+	}
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public String getPays() {
+		return pays;
+	}
+
+	public void setPays(String pays) {
+		this.pays = pays;
+	}
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+	public String getSexe() {
+		return sexe;
+	}
+
+	public void setSexe(String sexe) {
+		this.sexe = sexe;
+	}
+
+	public String getTelephone() {
+		return telephone;
+	}
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getVille() {
+		return ville;
+	}
+
+	public void setVille(String ville) {
+		this.ville = ville;
+	}
+
+	public List<ElementConstitutif> getElementConstitutifs() {
+		return elementConstitutifs;
+	}
+
+	public void setElementConstitutifs(List<ElementConstitutif> elementConstitutifs) {
+		this.elementConstitutifs = elementConstitutifs;
+	}
+
+	public List<Promotion> getPromotions() {
+		return promotions;
+	}
+
+	public void setPromotions(List<Promotion> promotions) {
+		this.promotions = promotions;
+	}
+
+	public List<UniteEnseignement> getUniteEnseignements() {
+		return uniteEnseignements;
+	}
+
+	public void setUniteEnseignements(List<UniteEnseignement> uniteEnseignements) {
+		this.uniteEnseignements = uniteEnseignements;
+	}
+    
+    
+
 
 }
